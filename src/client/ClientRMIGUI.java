@@ -96,7 +96,7 @@ public class ClientRMIGUI extends JFrame implements ActionListener{
 		    }   
 		});
 		//-----------------------------------------
-		//remove window buttons and border frame
+		//remove window buttons and border framee
 		//to force user to exit on a button
 		//- one way to control the exit behaviour
 	    //frame.setUndecorated(true);
