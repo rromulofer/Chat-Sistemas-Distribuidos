@@ -323,7 +323,7 @@ public class ClientRMIGUI extends JFrame implements ActionListener{
 		}
 	}
 
-}//end class
+}//end classe
 
 
 
