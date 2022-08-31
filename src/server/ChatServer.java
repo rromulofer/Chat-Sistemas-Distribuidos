@@ -11,12 +11,6 @@ import java.util.Vector;
 
 import client.ChatClient3IF;
 
-/**
- * 
- * @author Daragh Walshe 	B00064428
- * RMI Assignment 2		 	April 2015
- *
- */
 public class ChatServer extends UnicastRemoteObject implements ChatServerIF {
 	String line = "---------------------------------------------\n";
 	private Vector<Chatter> chatters;
