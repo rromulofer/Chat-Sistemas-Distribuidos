@@ -271,7 +271,7 @@ public class ClientRMIGUI extends JFrame implements ActionListener{
 				int[] privateList = list.getSelectedIndices();
 				
 				for(int i=0; i<privateList.length; i++){
-					System.out.println("selected index :" + privateList[i]);
+					System.out.println("selected index:" + privateList[i]);
 				}
 				message = textField.getText();
 				textField.setText("");
