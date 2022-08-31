@@ -128,7 +128,7 @@ public class ClientRMIGUI extends JFrame implements ActionListener{
 	 * @return
 	 */
 	public JPanel getTextPanel(){
-		String welcome = "Welcome enter your name and press Start to begin\n";
+		String welcome = "Bem vindo ao chat! Digite seu nome e aperte em comecar.\n";
 		textArea = new JTextArea(welcome, 14, 34);
 		textArea.setMargin(new Insets(10, 10, 10, 10));
 		textArea.setFont(meiryoFont);
@@ -165,13 +165,13 @@ public class ClientRMIGUI extends JFrame implements ActionListener{
 	public JPanel getUsersPanel(){
 		
 		userPanel = new JPanel(new BorderLayout());
-		String  userStr = " Current Users      ";
+		String  userStr = " Usuarios online     ";
 		
 		JLabel userLabel = new JLabel(userStr, JLabel.CENTER);
 		userPanel.add(userLabel, BorderLayout.NORTH);	
 		userLabel.setFont(new Font("Meiryo", Font.PLAIN, 16));
 
-		String[] noClientsYet = {"No other users"};
+		String[] noClientsYet = {"Sem usuario online"};
 		setClientPanel(noClientsYet);
 
 		clientPanel.setFont(meiryoFont);
@@ -213,15 +213,15 @@ public class ClientRMIGUI extends JFrame implements ActionListener{
 	 * @return
 	 */
 	public JPanel makeButtonPanel() {		
-		sendButton = new JButton("Send ");
+		sendButton = new JButton("Enviar ");
 		sendButton.addActionListener(this);
 		sendButton.setEnabled(false);
 
-        privateMsgButton = new JButton("Send PM");
+        privateMsgButton = new JButton("Enviar PM");
         privateMsgButton.addActionListener(this);
         privateMsgButton.setEnabled(false);
 		
-		startButton = new JButton("Start ");
+		startButton = new JButton("Comecar ");
 		startButton.addActionListener(this);
 		
 		JPanel buttonPanel = new JPanel(new GridLayout(4, 1));
@@ -246,7 +246,7 @@ public class ClientRMIGUI extends JFrame implements ActionListener{
 				if(name.length() != 0){
 					frame.setTitle(name + "'s console ");
 					textField.setText("");
-					textArea.append("username : " + name + " connecting to chat...\n");							
+					textArea.append("Nome do usuario: " + name + "Conectando ao servidor...\n");							
 					getConnected(name);
 					if(!chatClient.connectionProblem){
 						startButton.setEnabled(false);
@@ -254,7 +254,7 @@ public class ClientRMIGUI extends JFrame implements ActionListener{
 						}
 				}
 				else{
-					JOptionPane.showMessageDialog(frame, "Enter your name to Start");
+					JOptionPane.showMessageDialog(frame, "Digite seu nome para comecar");
 				}
 			}
 
@@ -263,7 +263,7 @@ public class ClientRMIGUI extends JFrame implements ActionListener{
 				message = textField.getText();
 				textField.setText("");
 				sendMessage(message);
-				System.out.println("Sending message : " + message);
+				System.out.println("Enviando mensagem: " + message);
 			}
 			
 			//send a private message, to selected users
