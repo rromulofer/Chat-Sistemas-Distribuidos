@@ -9,7 +9,6 @@ import java.rmi.server.UnicastRemoteObject;
 import javax.swing.JOptionPane;
 
 import server.ChatServerIF;
-//testeeeeee
 
 public class ChatClient3  extends UnicastRemoteObject implements ChatClient3IF {
 
