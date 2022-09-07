@@ -22,11 +22,11 @@ public class ChatClient3  extends UnicastRemoteObject implements ChatClient3IF {
 	protected boolean connectionProblem = false;
 	
 	/**
-	 * class constructor,
-	 * note may also use an overloaded constructor with 
-	 * a port no passed in argument to super
-	 * @throws RemoteException
-	 */
+	* Construtor de classe,
+	* note que pode usar um construtor sobrecarregado com
+	* uma porta não passada em argumento para super
+	* @throws RemoteException
+	*/
 
 	public ChatClient3(ClientRMIGUI aChatGUI, String userName) throws RemoteException {
 		super();
@@ -36,10 +36,10 @@ public class ChatClient3  extends UnicastRemoteObject implements ChatClient3IF {
 	}
 
 	/**
-	 * Register our own listening service/interface
-	 * lookup the server RMI interface, then send our details
-	 * @throws RemoteException
-	 */
+	* Registre nosso próprio serviço/interface de escuta
+	* procure a interface RMI do servidor e envie nossos detalhes
+	* @throws RemoteException
+	*/
 	
 	public void startClient() throws RemoteException {		
 		String[] details = {name, hostName, clientServiceName};	
