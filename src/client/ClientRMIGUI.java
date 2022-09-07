@@ -278,7 +278,7 @@ public class ClientRMIGUI extends JFrame implements ActionListener{
 			remoteExc.printStackTrace();	
 		}
 		
-	}//fim da ação executada
+	}//fim da actionPerformed
 
 	// --------------------------------------------------------------------
 	
