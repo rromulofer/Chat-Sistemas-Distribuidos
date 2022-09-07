@@ -66,14 +66,14 @@ public class ChatClient3  extends UnicastRemoteObject implements ChatClient3IF {
 	}
 
 	/**
-	 * pass our username, hostname and RMI service name to
-	 * the server to register out interest in joining the chat
+	* passe nosso nome de usuário, nome de host e nome de serviço RMI para
+	* o servidor para registrar interesse em participar do chat
 	 * @param details
 	 */
 	
 	public void registerWithServer(String[] details) {		
 		try{
-			serverIF.passIDentity(this.ref);//now redundant ??
+			serverIF.passIDentity(this.ref);
 			serverIF.registerListener(details);			
 		}
 		catch(Exception e){
@@ -83,22 +83,22 @@ public class ChatClient3  extends UnicastRemoteObject implements ChatClient3IF {
 
 	//=====================================================================
 	/**
-	 * Receive a string from the chat server
-	 * this is the clients RMI method, which will be used by the server 
-	 * to send messages to us
-	 */
+	* Receba uma string do servidor de bate-papo
+	* este é o método RMI do cliente, que será utilizado pelo servidor
+	* para enviar mensagens para nós
+	*/
 	
 	@Override
 	public void messageFromServer(String message) throws RemoteException {
 		System.out.println( message );
 		chatGUI.textArea.append( message );
-		//make the gui display the last appended text, ie scroll to bottom
+		//faz com que o gui exiba o último texto anexado, ou seja, rola para baixo
 		chatGUI.textArea.setCaretPosition(chatGUI.textArea.getDocument().getLength());
 	}
 	
 	/**
-	 * A method to update the display of users 
-	 * currently connected to the server
+	* Um método para atualizar a exibição de usuários
+	* atualmente conectado ao servidor
 	 */
 	
 	@Override
@@ -113,7 +113,7 @@ public class ChatClient3  extends UnicastRemoteObject implements ChatClient3IF {
 		chatGUI.clientPanel.revalidate();
 	}
 
-}//end class
+}//fim da classe
 
 
 
