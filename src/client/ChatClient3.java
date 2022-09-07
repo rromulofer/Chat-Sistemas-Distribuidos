@@ -21,13 +21,6 @@ public class ChatClient3  extends UnicastRemoteObject implements ChatClient3IF {
 	protected ChatServerIF serverIF;
 	protected boolean connectionProblem = false;
 
-	
-	/**
-	 * class constructor,
-	 * note may also use an overloaded constructor with 
-	 * a port no passed in argument to super
-	 * @throws RemoteException
-	 */
 	public ChatClient3(ClientRMIGUI aChatGUI, String userName) throws RemoteException {
 		super();
 		this.chatGUI = aChatGUI;
@@ -36,11 +29,6 @@ public class ChatClient3  extends UnicastRemoteObject implements ChatClient3IF {
 	}
 
 	
-	/**
-	 * Register our own listening service/interface
-	 * lookup the server RMI interface, then send our details
-	 * @throws RemoteException
-	 */
 	public void startClient() throws RemoteException {		
 		String[] details = {name, hostName, clientServiceName};	
 
@@ -66,11 +54,6 @@ public class ChatClient3  extends UnicastRemoteObject implements ChatClient3IF {
 	}
 
 
-	/**
-	 * pass our username, hostname and RMI service name to
-	 * the server to register out interest in joining the chat
-	 * @param details
-	 */
 	public void registerWithServer(String[] details) {		
 		try{
 			serverIF.passIDentity(this.ref);//now redundant ??
@@ -81,12 +64,7 @@ public class ChatClient3  extends UnicastRemoteObject implements ChatClient3IF {
 		}
 	}
 
-	//=====================================================================
-	/**
-	 * Receive a string from the chat server
-	 * this is the clients RMI method, which will be used by the server 
-	 * to send messages to us
-	 */
+
 	@Override
 	public void messageFromServer(String message) throws RemoteException {
 		System.out.println( message );
@@ -95,10 +73,6 @@ public class ChatClient3  extends UnicastRemoteObject implements ChatClient3IF {
 		chatGUI.textArea.setCaretPosition(chatGUI.textArea.getDocument().getLength());
 	}
 
-	/**
-	 * A method to update the display of users 
-	 * currently connected to the server
-	 */
 	@Override
 	public void updateUserList(String[] currentUsers) throws RemoteException {
 
@@ -111,7 +85,7 @@ public class ChatClient3  extends UnicastRemoteObject implements ChatClient3IF {
 		chatGUI.clientPanel.revalidate();
 	}
 
-}//end class
+}
 
 
 
