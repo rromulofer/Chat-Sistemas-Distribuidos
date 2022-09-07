@@ -24,7 +24,7 @@ public class ChatServer extends UnicastRemoteObject implements ChatServerIF {
 	
 	//-----------------------------------------------------------
 	/**
-	 * LOCAL METHODS
+	 * MÉTODOS LOCAIS
 	 */	
 	public static void main(String[] args) {
 		startRMIRegistry();	
@@ -39,16 +39,16 @@ public class ChatServer extends UnicastRemoteObject implements ChatServerIF {
 		try{
 			ChatServerIF hello = new ChatServer();
 			Naming.rebind("rmi://" + hostName + "/" + serviceName, hello);
-			System.out.println("Group Chat RMI Server is running...");
+			System.out.println("O servidor RMI de bate-papo em grupo está em execução...");
 		}
 		catch(Exception e){
-			System.out.println("Server had problems starting");
+			System.out.println("Servidor teve problemas ao iniciar");
 		}	
 	}
 
 	
 	/**
-	 * Start the RMI Registry
+	 * Inicia o Registro RMI
 	 */
 	public static void startRMIRegistry() {
 		try{
@@ -63,21 +63,21 @@ public class ChatServer extends UnicastRemoteObject implements ChatServerIF {
 	
 	//-----------------------------------------------------------
 	/*
-	 *   REMOTE METHODS
+	 *   MÉTODOS REMOTOS
 	 */
 	
 	/**
-	 * Return a message to client
+	 * Retornar uma mensagem ao cliente
 	 */
 	public String sayHello(String ClientName) throws RemoteException {
-		System.out.println(ClientName + " sent a message");
-		return "Hello " + ClientName + " from group chat server";
+		System.out.println(ClientName + " enviou uma mensagem");
+		return "Olá " + ClientName + " do servidor de bate-papo em grupo";
 	}
 	
 
 	/**
-	 * Send a string ( the latest post, mostly ) 
-	 * to all connected clients
+	* Envie uma string (a última postagem, principalmente)
+	* para todos os clientes conectados
 	 */
 	public void updateChat(String name, String nextPost) throws RemoteException {
 		String message =  name + " : " + nextPost + "\n";
@@ -85,7 +85,7 @@ public class ChatServer extends UnicastRemoteObject implements ChatServerIF {
 	}
 	
 	/**
-	 * Receive a new client remote reference
+	 * Recebe uma nova referência remota do cliente
 	 */
 	@Override
 	public void passIDentity(RemoteRef ref) throws RemoteException {	
@@ -95,7 +95,7 @@ public class ChatServer extends UnicastRemoteObject implements ChatServerIF {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-	}//end passIDentity
+	}//fim do passIDentity
 
 	
 	/**
