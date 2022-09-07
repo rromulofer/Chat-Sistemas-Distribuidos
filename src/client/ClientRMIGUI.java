@@ -71,8 +71,8 @@ public class ClientRMIGUI extends JFrame implements ActionListener{
 	
 		//-----------------------------------------
 		/*
-		 * intercept close method, inform server we are leaving
-		 * then let the system exit.
+		* intercepta o método close, informa ao servidor que está saindo,
+		* então deixe o sistema sair.
 		 */
 		frame.addWindowListener(new java.awt.event.WindowAdapter() {
 		    @Override
