@@ -1,2 +1,2 @@
-# Chat-Sistemas-Distribuidos
+# Chat-Sistema-Distribuido
 
